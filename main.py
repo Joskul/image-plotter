@@ -9,7 +9,7 @@ def surface_area(poly_function, lower_bound, upper_bound):
     def derivative_squared(x):
         return (np.polyder(poly_function, 1)(x))**2 + 1
 
-    result, _ = quad(lambda x: 2 * np.pi * np.sqrt(derivative_squared(x)), lower_bound, upper_bound) + (np.pi * polyfunction(0) ** 2) + (np.pi * polyfunction(upper_bound) ** 2)
+    result, _ = quad(lambda x: 2 * np.pi * np.sqrt(derivative_squared(x)), lower_bound, upper_bound) + (np.pi * poly_function(0) ** 2) + (np.pi * poly_function(upper_bound) ** 2)
     return result
 
 def volume(poly_function, lower_bound, upper_bound):
@@ -95,8 +95,8 @@ def plot_polynomial(poly_function, upper_contour, binary_image, scale_factor):
 
 def main():
     # Specify the path to the input image
-    image_path = 'images/bottle2.png'
-    physical_height = 23.5
+    image_path = 'images/bottle1.png'
+    physical_height = 20.5
     degree = 6
 
     binary_image = preprocess_image(image_path)
