@@ -14,7 +14,7 @@ def surface_area(poly_function, lower_bound, upper_bound):
 
 def volume(poly_function, lower_bound, upper_bound):
     def disc_function(x):
-        return 2 * np.pi * (np.abs(poly_function(x)) ** 2)
+        return np.pi * (np.abs(poly_function(x)) ** 2)
 
     result, _ = quad(disc_function, lower_bound, upper_bound)
     return result
